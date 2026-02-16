@@ -1,0 +1,15 @@
+= D-Vector Search
+
+== Overview
+Native D library for dense vector similarity search. Think "Pure D ChromaDB".
+
+== Features
+- **Cosine Similarity**: Optimized implementations using SIMD.
+- **Index Types**:
+    - **Flat**: Simple brute-force scan (exact search).
+    - **IVF**: Inverted File Index (approximate).
+    - **HNSW**: Hierarchical Navigable Small World (fast approximate - future).
+- **Serialization**: Save/Load index to disk.
+
+== Usage
+`dub add d-vector-search`

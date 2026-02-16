@@ -1,0 +1,13 @@
+{
+	"name": "d-vector-search",
+	"authors": [
+		"Antigravity"
+	],
+	"description": "Pure D vector database for similarity search.",
+	"copyright": "Copyright © 2026, Antigravity",
+	"license": "MIT",
+	"dependencies": {
+		"mir-algorithm": "~>3.20.4"
+	},
+	"targetType": "library"
+}

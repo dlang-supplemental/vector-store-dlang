@@ -1,0 +1,6 @@
+name: d-vector-search
+title: D-Vector Search
+version: master
+start_page: ROOT:index.adoc
+nav:
+- modules/ROOT/nav.adoc
