@@ -1,5 +1,9 @@
 = Implementation Plan: D-Vector Search
 
+== Phase 0: Integration Context
+- This library serves as the **Embedding Store** for `image-indexer-core`.
+- Priority is fast cosine similarity for image embeddings (`float[512]` or `float[768]`).
+
 == Phase 1: Metric Functions
 - Implement `cosine_similarity(float[] a, float[] b)` using `std.simd` or `mir-algorithm`.
 - Implement `l2_distance`.
