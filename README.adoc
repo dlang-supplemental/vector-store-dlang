@@ -1,15 +1,65 @@
-= D-Vector Search
+= Vector Search for D-lang
+:toc: macro
+:toc-title: Table of Contents
 
-== Overview
-Native D library for dense vector similarity search. Think "Pure D ChromaDB".
+A high-performance, native D-lang library for dense vector similarity search. Think of this as a lightweight, pure-D alternative to databases like Chroma, Pinecone, or Milvus, designed specifically for embedding-based retrieval.
 
-== Features
-- **Cosine Similarity**: Optimized implementations using SIMD.
-- **Index Types**:
-    - **Flat**: Simple brute-force scan (exact search).
-    - **IVF**: Inverted File Index (approximate).
-    - **HNSW**: Hierarchical Navigable Small World (fast approximate - future).
-- **Serialization**: Save/Load index to disk.
+toc::[]
 
-== Usage
-`dub add d-vector-search`
+== 💡 Explanation: Vector Databases
+
+In modern AI stacks, "meaning" is often represented as high-dimensional vectors (embeddings). A standard database cannot efficiently find the "nearest neighbor" of a vector among millions of entries. 
+
+This library provides the specialized indexing structures required for:
+*   **Semantic Search**: Finding text or images by meaning.
+*   **Recommendation Systems**: Finding similar items.
+*   **RAG (Retrieval-Augmented Generation)**: Providing context to LLMs.
+
+== 🚀 Tutorial: Quick Start
+
+1.  Add the dependency:
++
+[source,bash]
+----
+dub add vector-store-dlang
+----
+
+2.  Create an index and add vectors:
++
+[source,d]
+----
+import vector_store.index;
+auto index = new FlatIndex(512); // dimension size for CLIP
+index.add(embeddingVector, "image_001.jpg");
+----
+
+3.  Query the index:
++
+[source,d]
+----
+auto matches = index.search(queryVector, 5); // top 5
+----
+
+== 🛠️ How-to: Persistence
+
+To save and load your indexed data:
+
+[source,d]
+----
+// Save to disk
+index.save("my_index.bin");
+
+// Load from disk
+auto index = FlatIndex.load("my_index.bin");
+----
+
+== 📖 Reference: Technical Specs
+
+*   **Algorithms**:
+    *   `FlatIndex`: Brute-force exact search (O(N)).
+    *   `IVFIndex`: Inverted File Index for approximate search (O(sqrt(N))).
+*   **Distance Metrics**: Cosine Similarity, Dot Product, Euclidean Distance.
+*   **Optimizations**: AVX2/SIMD acceleration via `mir-algorithm`.
+
+== ⚖️ License
+MIT

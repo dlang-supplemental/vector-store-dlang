@@ -1,3 +1,5 @@
+module vector_store.index;
+
 import std.stdio;
 
 void main()
