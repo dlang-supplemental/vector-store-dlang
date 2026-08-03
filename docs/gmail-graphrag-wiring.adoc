@@ -1,0 +1,13 @@
+= Gmail GraphRAG wiring (external)
+
+Private mail sync lives in `AMDphreak/gmail-sync` (proprietary).
+
+This package (`vector-store-dlang`) is the intended **on-device embedding index** once Phase-2 hydration fetches message bodies.
+
+See also:
+
+* `dlang-supplemental/densor` — local inference
+* `dlang-supplemental/graphrag-indexer` — tray/HUD shell for long-running jobs
+* `AMDphreak/connectome-fs` — graph association store
+
+Do not commit Gmail tokens here.
