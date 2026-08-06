@@ -1,31 +1,53 @@
-= Vector Search for D-lang
-:toc: macro
-:toc-title: Table of Contents
+ifndef::env-github[:icons: font]
+:toc: preamble
+:toclevels: 2
+:sectanchors:
+endif::[]
 
-A high-performance, native D-lang library for dense vector similarity search. Think of this as a lightweight, pure-D alternative to databases like Chroma, Pinecone, or Milvus, designed specifically for embedding-based retrieval.
+ifndef::env-github[]
+image:https://img.shields.io/github/contributors/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Contributors,link=https://github.com/dlang-supplemental/vector-store-dlang/graphs/contributors]
+image:https://img.shields.io/github/forks/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Forks,link=https://github.com/dlang-supplemental/vector-store-dlang/network/members]
+image:https://img.shields.io/github/stars/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Stars,link=https://github.com/dlang-supplemental/vector-store-dlang/stargazers]
+image:https://img.shields.io/github/issues/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Issues,link=https://github.com/dlang-supplemental/vector-store-dlang/issues]
+endif::[]
 
-toc::[]
+ifdef::env-github[]
+image:https://img.shields.io/github/contributors/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Contributors]
+image:https://img.shields.io/github/forks/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Forks]
+image:https://img.shields.io/github/stars/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Stars]
+image:https://img.shields.io/github/issues/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Issues]
+endif::[]
 
-== 💡 Explanation: Vector Databases
+= vector-store-dlang
 
-In modern AI stacks, "meaning" is often represented as high-dimensional vectors (embeddings). A standard database cannot efficiently find the "nearest neighbor" of a vector among millions of entries. 
+D-Vector Search. Vector store and embedding utilities in D.
 
-This library provides the specialized indexing structures required for:
-*   **Semantic Search**: Finding text or images by meaning.
-*   **Recommendation Systems**: Finding similar items.
-*   **RAG (Retrieval-Augmented Generation)**: Providing context to LLMs.
+link:https://dlang-supplemental.github.io/docs[Explore the docs] ·
+link:https://github.com/dlang-supplemental/vector-store-dlang/issues[Report Bug]
 
-== 🚀 Tutorial: Quick Start
+== Installation
 
-1.  Add the dependency:
-+
 [source,bash]
 ----
 dub add vector-store-dlang
 ----
 
-2.  Create an index and add vectors:
-+
+== About The Project
+
+A high-performance, native D-lang library for dense vector similarity search. Think of this as a lightweight, pure-D alternative to databases like Chroma, Pinecone, or Milvus, designed specifically for embedding-based retrieval.
+
+In modern AI stacks, "meaning" is often represented as high-dimensional vectors (embeddings). A standard database cannot efficiently find the "nearest neighbor" of a vector among millions of entries.
+
+This library provides the specialized indexing structures required for:
+
+* **Semantic Search**: Finding text or images by meaning.
+* **Recommendation Systems**: Finding similar items.
+* **RAG (Retrieval-Augmented Generation)**: Providing context to LLMs.
+
+== Usage
+
+Create an index and add vectors:
+
 [source,d]
 ----
 import vector_store.index;
@@ -33,33 +55,34 @@ auto index = new FlatIndex(512); // dimension size for CLIP
 index.add(embeddingVector, "image_001.jpg");
 ----
 
-3.  Query the index:
-+
+Query the index:
+
 [source,d]
 ----
 auto matches = index.search(queryVector, 5); // top 5
 ----
 
-== 🛠️ How-to: Persistence
-
-To save and load your indexed data:
+=== Persistence
 
 [source,d]
 ----
-// Save to disk
 index.save("my_index.bin");
-
-// Load from disk
 auto index = FlatIndex.load("my_index.bin");
 ----
 
-== 📖 Reference: Technical Specs
+=== Technical specs
 
-*   **Algorithms**:
-    *   `FlatIndex`: Brute-force exact search (O(N)).
-    *   `IVFIndex`: Inverted File Index for approximate search (O(sqrt(N))).
-*   **Distance Metrics**: Cosine Similarity, Dot Product, Euclidean Distance.
-*   **Optimizations**: AVX2/SIMD acceleration via `mir-algorithm`.
+* **Algorithms**: `FlatIndex` (O(N)); `IVFIndex` (O(sqrt(N))).
+* **Distance Metrics**: Cosine Similarity, Dot Product, Euclidean Distance.
+* **Optimizations**: AVX2/SIMD acceleration via `mir-algorithm`.
 
-== ⚖️ License
+== License
+
 MIT
+
+== Contact
+
+DLang Supplemental — dlang@devcentr.org
+
+* Project: https://github.com/dlang-supplemental/vector-store-dlang
+* Site: https://dlang-supplemental.github.io
