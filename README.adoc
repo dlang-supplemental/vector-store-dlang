@@ -4,19 +4,11 @@ ifndef::env-github[:icons: font]
 :sectanchors:
 endif::[]
 
-ifndef::env-github[]
+[[readme-top]]
 image:https://img.shields.io/github/contributors/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Contributors,link=https://github.com/dlang-supplemental/vector-store-dlang/graphs/contributors]
 image:https://img.shields.io/github/forks/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Forks,link=https://github.com/dlang-supplemental/vector-store-dlang/network/members]
 image:https://img.shields.io/github/stars/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Stars,link=https://github.com/dlang-supplemental/vector-store-dlang/stargazers]
 image:https://img.shields.io/github/issues/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Issues,link=https://github.com/dlang-supplemental/vector-store-dlang/issues]
-endif::[]
-
-ifdef::env-github[]
-image:https://img.shields.io/github/contributors/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Contributors]
-image:https://img.shields.io/github/forks/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Forks]
-image:https://img.shields.io/github/stars/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Stars]
-image:https://img.shields.io/github/issues/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Issues]
-endif::[]
 
 = vector-store-dlang
 
@@ -32,6 +24,8 @@ link:https://github.com/dlang-supplemental/vector-store-dlang/issues[Report Bug]
 dub add vector-store-dlang
 ----
 
+link:#readme-top[back to top]
+
 == About The Project
 
 A high-performance, native D-lang library for dense vector similarity search. Think of this as a lightweight, pure-D alternative to databases like Chroma, Pinecone, or Milvus, designed specifically for embedding-based retrieval.
@@ -43,6 +37,8 @@ This library provides the specialized indexing structures required for:
 * **Semantic Search**: Finding text or images by meaning.
 * **Recommendation Systems**: Finding similar items.
 * **RAG (Retrieval-Augmented Generation)**: Providing context to LLMs.
+
+link:#readme-top[back to top]
 
 == Usage
 
@@ -76,9 +72,13 @@ auto index = FlatIndex.load("my_index.bin");
 * **Distance Metrics**: Cosine Similarity, Dot Product, Euclidean Distance.
 * **Optimizations**: AVX2/SIMD acceleration via `mir-algorithm`.
 
+link:#readme-top[back to top]
+
 == License
 
 MIT
+
+link:#readme-top[back to top]
 
 == Contact
 
@@ -86,3 +86,5 @@ DLang Supplemental — dlang@devcentr.org
 
 * Project: https://github.com/dlang-supplemental/vector-store-dlang
 * Site: https://dlang-supplemental.github.io
+
+link:#readme-top[back to top]
