@@ -2,9 +2,26 @@ ifndef::env-github[:icons: font]
 :toc: preamble
 :toclevels: 2
 :sectanchors:
+
+ifdef::env-github[]
+++++
+<a id="readme-top"></a>
+<div align="center">
+<a href="https://github.com/dlang-supplemental/vector-store-dlang/graphs/contributors"><img src="https://img.shields.io/github/contributors/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge" alt="Contributors"></a>
+<a href="https://github.com/dlang-supplemental/vector-store-dlang/network/members"><img src="https://img.shields.io/github/forks/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge" alt="Forks"></a>
+<a href="https://github.com/dlang-supplemental/vector-store-dlang/stargazers"><img src="https://img.shields.io/github/stars/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge" alt="Stars"></a>
+<a href="https://github.com/dlang-supplemental/vector-store-dlang/issues"><img src="https://img.shields.io/github/issues/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge" alt="Issues"></a>
+<br />
+<h3 align="center">vector-store-dlang</h3>
+<p align="center">
+D-Vector Search. Vector store and embedding utilities in D.<br />
+<a href="https://dlang-supplemental.github.io/docs"><strong>Explore the docs</strong></a><br /><br /><a href="https://github.com/dlang-supplemental/vector-store-dlang/issues">Report Bug</a>
+</p>
+</div>
+++++
 endif::[]
 
-[[readme-top]]
+ifndef::env-github[]
 image:https://img.shields.io/github/contributors/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Contributors,link=https://github.com/dlang-supplemental/vector-store-dlang/graphs/contributors]
 image:https://img.shields.io/github/forks/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Forks,link=https://github.com/dlang-supplemental/vector-store-dlang/network/members]
 image:https://img.shields.io/github/stars/dlang-supplemental/vector-store-dlang.svg?style=for-the-badge[Stars,link=https://github.com/dlang-supplemental/vector-store-dlang/stargazers]
@@ -16,6 +33,7 @@ D-Vector Search. Vector store and embedding utilities in D.
 
 link:https://dlang-supplemental.github.io/docs[Explore the docs] ·
 link:https://github.com/dlang-supplemental/vector-store-dlang/issues[Report Bug]
+endif::[]
 
 == Installation
 
@@ -24,7 +42,9 @@ link:https://github.com/dlang-supplemental/vector-store-dlang/issues[Report Bug]
 dub add vector-store-dlang
 ----
 
-link:#readme-top[back to top]
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 
 == About The Project
 
@@ -38,7 +58,9 @@ This library provides the specialized indexing structures required for:
 * **Recommendation Systems**: Finding similar items.
 * **RAG (Retrieval-Augmented Generation)**: Providing context to LLMs.
 
-link:#readme-top[back to top]
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 
 == Usage
 
@@ -72,13 +94,17 @@ auto index = FlatIndex.load("my_index.bin");
 * **Distance Metrics**: Cosine Similarity, Dot Product, Euclidean Distance.
 * **Optimizations**: AVX2/SIMD acceleration via `mir-algorithm`.
 
-link:#readme-top[back to top]
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 
 == License
 
 MIT
 
-link:#readme-top[back to top]
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 
 == Contact
 
@@ -87,4 +113,6 @@ DLang Supplemental — dlang@devcentr.org
 * Project: https://github.com/dlang-supplemental/vector-store-dlang
 * Site: https://dlang-supplemental.github.io
 
-link:#readme-top[back to top]
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
